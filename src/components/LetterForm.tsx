@@ -36,7 +36,7 @@ export const CreateLetter = () => {
               id="sent_to"
               placeholder="Who is this for?"
               onChange={(event) => setRecipient(event.target.value)}
-              className="m-22 mx-15 mb-5 "
+              className="m-22 mx-15 mb-5"
             />
           </div>
           <div>
@@ -45,7 +45,7 @@ export const CreateLetter = () => {
               id="messsage"
               placeholder="Write your message..."
               onChange={(event) => setMessage(event.target.value)}
-              className="mx-15 field-sizing-fixed"
+              className="mx-5 h-48 w-full resize-none border-none bg-transparent p-4 text-base outline-none"
             />
           </div>
         </div>
