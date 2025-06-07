@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { supabase } from '../supabase-client';
-import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-import { supabase } from '../supabase-client';
 
 interface MessageInput {
   recipient: string;
@@ -11,7 +8,6 @@ interface MessageInput {
 }
 
 const createMessage = async (message: MessageInput) => {
-  const { data, error } = await supabase.from('letters').insert(message);
   const { data, error } = await supabase.from('letters').insert(message);
 
   if (error) throw new Error(error.message);
@@ -22,16 +18,9 @@ const createMessage = async (message: MessageInput) => {
 export const CreateLetter = () => {
   const [recipient, setRecipient] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [recipient, setRecipient] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
 
   const { mutate } = useMutation({ mutationFn: createMessage });
-  const { mutate } = useMutation({ mutationFn: createMessage });
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    mutate({ recipient, message });
-  };
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     mutate({ recipient, message });
@@ -68,7 +57,7 @@ export const CreateLetter = () => {
             type="submit"
             className="rounded-lg bg-[#ff3333] p-5 px-10 font-mono text-[#f4f3f2]"
           >
-            Send Message
+            Submit
           </button>
         </div>
       </form>
