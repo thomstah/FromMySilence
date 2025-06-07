@@ -28,28 +28,38 @@ export const CreateLetter = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="items-center-safe">
-        <div className="h-[450px] w-[450px] items-center bg-[url('/images/sky.png')] bg-cover bg-center">
-          <div>
-            <input
-              type="text"
-              id="sent_to"
-              placeholder="Who is this for?"
-              onChange={(event) => setRecipient(event.target.value)}
-              className="m-22 mx-15 mb-5"
-            />
+      <form onSubmit={handleSubmit}>
+        <div className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-[url('/images/sky.png')] bg-cover bg-center text-xl">
+          <div className="mx-10 mt-25 mb-7.5">
+            <span className="w-full">
+              To:{' '}
+              <input
+                type="text"
+                id="sent_to"
+                placeholder="Who is this for?"
+                onChange={(event) => setRecipient(event.target.value)}
+                className="border-none outline-none"
+              />
+            </span>
           </div>
-          <div>
+          <div className="mx-10">
             <textarea
               value={message}
               id="messsage"
               placeholder="Write your message..."
               onChange={(event) => setMessage(event.target.value)}
-              className="mx-5 h-48 w-full resize-none border-none bg-transparent p-4 text-base outline-none"
+              className="h-64 w-full resize-none border-none bg-transparent outline-none"
             />
           </div>
         </div>
-        <button type="submit">Send Message</button>
+        <div className="my-2 flex w-full justify-center">
+          <button
+            type="submit"
+            className="rounded-lg bg-[#ff3333] p-5 px-10 font-mono text-[#f4f3f2]"
+          >
+            Send Message
+          </button>
+        </div>
       </form>
     </div>
   );

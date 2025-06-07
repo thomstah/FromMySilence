@@ -1,4 +1,13 @@
+@font-face {
+  font-family: schoolBell;
+  src: url('../src/assets/fonts/Schoolbell-Regular.ttf');
+}
+
 @import 'tailwindcss';
+
+@theme {
+  --font-schoolBell: schoolBell, 'cursive';
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
