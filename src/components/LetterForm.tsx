@@ -2,9 +2,25 @@ import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { supabase } from '../supabase-client';
 
+const backgrounds = [
+  'blue.png',
+  'brown.png',
+  'burgundy.png',
+  'gray.png',
+  'grayay.png',
+  'green.png',
+  'lime.png',
+  'orange.png',
+  'pink.png',
+  'red.png',
+  'sky.png',
+  'yellow.png',
+];
+
 interface MessageInput {
   recipient: string;
   message: string;
+  background: string;
 }
 
 const createMessage = async (message: MessageInput) => {
@@ -18,18 +34,25 @@ const createMessage = async (message: MessageInput) => {
 export const CreateLetter = () => {
   const [recipient, setRecipient] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [background, setBackground] = useState('blue.png');
 
   const { mutate } = useMutation({ mutationFn: createMessage });
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    mutate({ recipient, message });
+    mutate({ recipient, message, background });
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-[url('/images/sky.png')] bg-cover bg-center text-xl">
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-max flex-col justify-center"
+    >
+      <div className="flex justify-center">
+        <div
+          className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-cover bg-center text-xl"
+          style={{ backgroundImage: `url('images/${background}')` }}
+        >
           <div className="mx-10 mt-25 mb-7.5">
             <span className="w-full">
               To:{' '}
@@ -38,7 +61,7 @@ export const CreateLetter = () => {
                 id="sent_to"
                 placeholder="Who is this for?"
                 onChange={(event) => setRecipient(event.target.value)}
-                className="border-none outline-none"
+                className="w-75 border-none outline-none"
               />
             </span>
           </div>
@@ -52,15 +75,27 @@ export const CreateLetter = () => {
             />
           </div>
         </div>
-        <div className="my-2 flex w-full justify-center">
-          <button
-            type="submit"
-            className="rounded-lg bg-[#ff3333] p-5 px-10 font-mono text-[#f4f3f2]"
-          >
-            Submit
-          </button>
+        <div className="ml-4 grid max-h-[450px] grid-cols-3 gap-2 overflow-y-auto align-middle">
+          {backgrounds.map((bg) => (
+            <img
+              key={bg}
+              src={`/images/${bg}`}
+              alt={bg}
+              onClick={() => setBackground(bg)}
+              className={`h-16 w-16 cursor-pointer border-2 ${
+                background === bg ? 'border-blue-500' : 'border-transparent'
+              }`}
+            />
+          ))}
         </div>
-      </form>
-    </div>
+      </div>
+
+      <button
+        type="submit"
+        className="mt-4 rounded-lg bg-[#ff3333] p-5 px-10 font-mono text-[#f4f3f2]"
+      >
+        Submit
+      </button>
+    </form>
   );
 };
