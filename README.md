@@ -1,4 +1,3 @@
-FromMySilence
 FromMySilence is an ongoing web project inspired by The Unsent Project, aiming to create a space where users can send anonymous messages tied to names or recipients. The goal is to offer a digital wall of unspoken thoughts, feelings, and memories.
 
 <br>
