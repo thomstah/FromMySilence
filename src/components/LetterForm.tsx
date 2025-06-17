@@ -24,7 +24,7 @@ interface MessageInput {
 }
 
 const createMessage = async (message: MessageInput) => {
-  const { data, error } = await supabase.from('letters').insert(message);
+  const { data, error } = await supabase.from('messages').insert(message);
 
   if (error) throw new Error(error.message);
 
@@ -83,7 +83,7 @@ export const CreateLetter = () => {
               alt={bg}
               onClick={() => setBackground(bg)}
               className={`h-16 w-16 cursor-pointer border-2 ${
-                background === bg ? 'border-blue-500' : 'border-transparent'
+                background === bg ? 'border-black' : 'border-transparent'
               }`}
             />
           ))}
@@ -92,7 +92,7 @@ export const CreateLetter = () => {
 
       <button
         type="submit"
-        className="mt-4 rounded-lg bg-[#ff3333] p-5 px-10 font-mono text-[#f4f3f2]"
+        className="mt-4 cursor-pointer rounded-lg bg-[#ff3333] p-5 px-10 font-mono text-[#f4f3f2] hover:bg-[#f20400]"
       >
         Submit
       </button>
