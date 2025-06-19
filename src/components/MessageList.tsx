@@ -1,9 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '../supabase-client';
+import { MessageItem } from './MessageItem.tsx';
 
-interface Message {
+export interface Message {
   id: number;
   recipient: string;
+  message: string;
   background: string;
 }
 
@@ -24,7 +26,7 @@ export const MessageLists = () => {
     queryFn: fetchMessages,
   });
 
-  if (isLoading) <div> Loading Heartfelt Messages...</div>;
+  if (isLoading) <div> Loading Heartfelt Messages... </div>;
 
   if (error) {
     Error: {
@@ -36,5 +38,9 @@ export const MessageLists = () => {
 
   const background = data && data.length > 0 ? data[0].background : '';
 
-  return <div>{data?.map((message) => <MessageItem />)}</div>;
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      {data?.map((message, key) => <MessageItem message={message} key={key} />)}
+    </div>
+  );
 };

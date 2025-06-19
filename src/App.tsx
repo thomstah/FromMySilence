@@ -7,9 +7,9 @@ import { About } from './pages/About';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen">
       <Navbar />
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto mt-5 px-4 py-6">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/send" element={<SendLetter />} />

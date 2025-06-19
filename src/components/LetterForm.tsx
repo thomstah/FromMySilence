@@ -50,7 +50,7 @@ export const CreateLetter = () => {
     >
       <div className="flex justify-center">
         <div
-          className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-cover bg-center text-xl"
+          className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-cover bg-center text-2xl"
           style={{ backgroundImage: `url('images/${background}')` }}
         >
           <div className="mx-10 mt-25 mb-7.5">
@@ -71,6 +71,7 @@ export const CreateLetter = () => {
               id="messsage"
               placeholder="Write your message..."
               onChange={(event) => setMessage(event.target.value)}
+              maxLength={170}
               className="h-64 w-full resize-none border-none bg-transparent outline-none"
             />
           </div>
