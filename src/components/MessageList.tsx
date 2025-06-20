@@ -36,8 +36,6 @@ export const MessageLists = () => {
 
   console.log(data);
 
-  const background = data && data.length > 0 ? data[0].background : '';
-
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {data?.map((message, key) => <MessageItem message={message} key={key} />)}
