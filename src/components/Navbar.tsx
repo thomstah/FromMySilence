@@ -10,7 +10,7 @@ export const Navbar = () => {
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
-            to={'/'}
+            to={'//'}
             className="text-xl font-bold text-[#121212] hover:text-[#ff3333]"
           >
             FromMy<span className="text-[#ff3333]">Silence</span>
