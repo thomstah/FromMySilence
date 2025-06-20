@@ -80,7 +80,7 @@ export const CreateLetter = () => {
           {backgrounds.map((bg) => (
             <img
               key={bg}
-              src={`/images/${bg}`}
+              src={`./images/${bg}`}
               alt={bg}
               onClick={() => setBackground(bg)}
               className={`h-16 w-16 cursor-pointer border-2 ${

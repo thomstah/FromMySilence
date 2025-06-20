@@ -14,7 +14,7 @@ export const MessageItem = ({ message }: Props) => {
             style={{
               width: '400px',
               height: '400px',
-              backgroundImage: `url(/images/${message.background})`,
+              backgroundImage: `url(./images/${message.background})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
