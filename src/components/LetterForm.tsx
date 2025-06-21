@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { supabase } from '../supabase-client';
+import { useNavigate } from 'react-router-dom';
 
 const backgrounds = [
   'blue.png',
@@ -36,7 +37,17 @@ export const CreateLetter = () => {
   const [message, setMessage] = useState<string>('');
   const [background, setBackground] = useState('blue.png');
 
-  const { mutate } = useMutation({ mutationFn: createMessage });
+  const navigate = useNavigate();
+
+  const { mutate } = useMutation({
+    mutationFn: createMessage,
+    onSuccess: () => {
+      navigate('/');
+    },
+    onError: (error) => {
+      console.error('Error Creating message: ', error);
+    },
+  });
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
