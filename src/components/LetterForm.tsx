@@ -61,10 +61,10 @@ export const CreateLetter = () => {
     >
       <div className="flex flex-col justify-center md:flex-row">
         <div
-          className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-cover bg-center text-2xl"
+          className="font-schoolBell flex h-[400px] w-[400px] flex-col bg-cover bg-center text-lg md:h-[450px] md:w-[450px] md:text-2xl"
           style={{ backgroundImage: `url('images/${background}')` }}
         >
-          <div className="mx-10 mt-25 mb-7.5">
+          <div className="mx-10 mt-22.5 mb-6 md:mt-25 md:mb-7.5">
             <span className="w-full">
               To:{' '}
               <input
@@ -83,7 +83,7 @@ export const CreateLetter = () => {
               placeholder="Write your message..."
               onChange={(event) => setMessage(event.target.value)}
               maxLength={170}
-              className="h-64 w-full resize-none border-none bg-transparent outline-none"
+              className="max-h-64 w-full resize-none border-none bg-transparent outline-none"
             />
           </div>
         </div>
