@@ -72,7 +72,8 @@ export const CreateLetter = () => {
                 id="sent_to"
                 placeholder="Who is this for?"
                 onChange={(event) => setRecipient(event.target.value)}
-                className="w-75 border-none outline-none"
+                className="max-w-75 border-none outline-none"
+                maxLength={25}
               />
             </span>
           </div>
@@ -87,7 +88,7 @@ export const CreateLetter = () => {
             />
           </div>
         </div>
-        <div className="ml-4 grid max-h-[450px] grid-cols-3 justify-items-center gap-2 overflow-y-auto align-middle md:ml-4">
+        <div className="mt-2 ml-4 grid max-h-[450px] grid-cols-3 justify-items-center gap-2 overflow-y-auto align-middle md:mt-0 md:ml-4">
           {backgrounds.map((bg) => (
             <img
               key={bg}
@@ -102,12 +103,14 @@ export const CreateLetter = () => {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="mt-4 cursor-pointer rounded-lg bg-[#ff3333] p-5 px-5 font-mono text-[#f4f3f2] hover:bg-[#f20400] md:px-10"
-      >
-        Submit
-      </button>
+      <div className="flex w-full justify-center">
+        <button
+          type="submit"
+          className="mx-auto mt-4 w-auto max-w-75 cursor-pointer rounded-lg bg-[#ff3333] p-5 px-25 font-mono text-[#f4f3f2] hover:bg-[#f20400] md:w-full md:max-w-full"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
