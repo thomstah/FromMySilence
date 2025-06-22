@@ -25,7 +25,7 @@ export const MessageItem = ({ message }: Props) => {
                 <span className="w-full">To: {message.recipient}</span>
               </div>
               <div className="h-md">
-                <p className="max-h-64 max-w-80 truncate text-pretty wrap-break-word text-clip">
+                <p className="max-h-64 max-w-80 text-pretty wrap-break-word text-clip">
                   {message.message}
                 </p>
               </div>
