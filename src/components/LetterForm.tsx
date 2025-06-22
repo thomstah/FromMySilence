@@ -4,18 +4,18 @@ import { supabase } from '../supabase-client';
 import { useNavigate } from 'react-router-dom';
 
 const backgrounds = [
-  'blue.png',
-  'brown.png',
-  'burgundy.png',
-  'gray.png',
-  'grayay.png',
-  'green.png',
-  'lime.png',
-  'orange.png',
-  'pink.png',
-  'red.png',
-  'sky.png',
-  'yellow.png',
+  'blue.avif',
+  'brown.avif',
+  'burgundy.avif',
+  'gray.avif',
+  'grayay.avif',
+  'green.avif',
+  'lime.avif',
+  'orange.avif',
+  'pink.avif',
+  'red.avif',
+  'sky.avif',
+  'yellow.avif',
 ];
 
 interface MessageInput {
@@ -35,7 +35,7 @@ const createMessage = async (message: MessageInput) => {
 export const CreateLetter = () => {
   const [recipient, setRecipient] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [background, setBackground] = useState('blue.png');
+  const [background, setBackground] = useState('blue.avif');
 
   const navigate = useNavigate();
 
