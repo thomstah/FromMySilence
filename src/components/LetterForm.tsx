@@ -104,7 +104,7 @@ export const CreateLetter = () => {
 
       <button
         type="submit"
-        className="mt-4 cursor-pointer rounded-lg bg-[#ff3333] p-5 px-7.5 font-mono text-[#f4f3f2] hover:bg-[#f20400] md:px-10"
+        className="mt-4 cursor-pointer rounded-lg bg-[#ff3333] p-5 px-5 font-mono text-[#f4f3f2] hover:bg-[#f20400] md:px-10"
       >
         Submit
       </button>
