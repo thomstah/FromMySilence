@@ -59,7 +59,7 @@ export const CreateLetter = () => {
       onSubmit={handleSubmit}
       className="flex w-max flex-col justify-center"
     >
-      <div className="flex justify-center">
+      <div className="flex flex-col justify-center md:flex-row">
         <div
           className="font-schoolBell flex h-[450px] w-[450px] flex-col bg-cover bg-center text-2xl"
           style={{ backgroundImage: `url('images/${background}')` }}
@@ -87,7 +87,7 @@ export const CreateLetter = () => {
             />
           </div>
         </div>
-        <div className="ml-4 grid max-h-[450px] grid-cols-3 gap-2 overflow-y-auto align-middle">
+        <div className="ml-4 grid max-h-[450px] grid-cols-3 justify-items-center gap-2 overflow-y-auto align-middle md:ml-4">
           {backgrounds.map((bg) => (
             <img
               key={bg}
