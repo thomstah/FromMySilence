@@ -33,6 +33,7 @@ const createMessage = async (message: MessageInput) => {
 };
 
 export const CreateLetter = () => {
+  const [error, setError] = useState<string | null>(null);
   const [recipient, setRecipient] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [background, setBackground] = useState('blue.avif');
@@ -51,6 +52,11 @@ export const CreateLetter = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    if (!recipient.trim() || !message.trim()) {
+      setError('Recipient and/or message cannot be empty.');
+      return;
+    }
+    setError(null);
     mutate({ recipient, message, background });
   };
 
@@ -59,6 +65,11 @@ export const CreateLetter = () => {
       onSubmit={handleSubmit}
       className="flex w-max flex-col justify-center"
     >
+      {error && (
+        <p className="mb-4 w-auto rounded-lg bg-red-100 px-4 py-2 text-center font-mono wrap-normal text-red-700">
+          {error}
+        </p>
+      )}
       <div className="flex flex-col justify-center md:flex-row">
         <div
           className="font-schoolBell flex h-[400px] w-[400px] flex-col bg-cover bg-center text-lg md:h-[450px] md:w-[450px] md:text-2xl"

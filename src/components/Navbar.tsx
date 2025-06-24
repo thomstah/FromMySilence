@@ -17,7 +17,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Links */}
-          <div className="font absolute left-1/2 hidden -translate-x-1/2 transform items-center space-x-12 md:flex">
+          <div className="font absolute left-1/2 hidden -translate-x-1/2 transform items-center justify-center space-x-12 md:flex">
             <Link
               to={'/'}
               className="text-[#121212] transition-colors hover:text-[#ff3333]"
