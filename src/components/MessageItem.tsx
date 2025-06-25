@@ -1,4 +1,3 @@
-import { Link } from 'react-router';
 import type { Message } from './MessageList';
 interface Props {
   message: Message;
@@ -7,32 +6,29 @@ interface Props {
 export const MessageItem = ({ message }: Props) => {
   return (
     <div>
-      <div />
-      <Link to="/MessageView">
-        <div>
-          <div
-            style={{
-              width: '400px',
-              height: '400px',
-              backgroundImage: `url(/images/${message.background})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-            className="font-schoolBell justify center flex text-xl"
-          >
-            <div className="mx-10 mt-22.5">
-              <div className="mb-6">
-                <span className="w-full">To: {message.recipient}</span>
-              </div>
-              <div className="h-md">
-                <p className="max-h-64 max-w-80 truncate text-pretty wrap-break-word text-clip">
-                  {message.message}
-                </p>
-              </div>
+      <div>
+        <div
+          style={{
+            width: '400px',
+            height: '400px',
+            backgroundImage: `url(./images/${message.background})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+          className="font-schoolBell justify center flex text-xl"
+        >
+          <div className="mx-10 mt-22.5">
+            <div className="mb-6">
+              <span className="w-full">To: {message.recipient}</span>
+            </div>
+            <div className="h-md">
+              <p className="max-h-64 max-w-80 text-pretty wrap-break-word text-clip">
+                {message.message}
+              </p>
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

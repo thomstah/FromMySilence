@@ -10,14 +10,14 @@ export const Navbar = () => {
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
-            to={'/'}
-            className="text-xl font-bold text-[#121212] hover:text-[#ff3333]"
+            to={'//'}
+            className="text-xl font-bold text-[#121212] transition-colors hover:text-[#ff3333]"
           >
             FromMy<span className="text-[#ff3333]">Silence</span>
           </Link>
 
           {/* Desktop Links */}
-          <div className="font absolute left-1/2 hidden -translate-x-1/2 transform items-center space-x-12 md:flex">
+          <div className="font absolute left-1/2 hidden -translate-x-1/2 transform items-center justify-center space-x-12 md:flex">
             <Link
               to={'/'}
               className="text-[#121212] transition-colors hover:text-[#ff3333]"
@@ -39,7 +39,7 @@ export const Navbar = () => {
           </div>
           <Link
             to={'/send'}
-            className="hidden transform rounded-lg bg-[#ff3333] p-3 text-[#f4f3f2] hover:bg-[#f20400] md:flex"
+            className="hidden transform rounded-lg bg-[#ff3333] p-3 text-[#f4f3f2] transition-colors hover:bg-[#f20400] md:flex"
           >
             Send Message
           </Link>

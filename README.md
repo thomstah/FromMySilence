@@ -1,21 +1,41 @@
 # FromMySilence
 
-**FromMySilence** is an ongoing web project inspired by [The Unsent Project](https://theunsentproject.com/), aiming to create a space where users can send anonymous messages tied to names or recipients. The goal is to offer a digital wall of unspoken thoughts, feelings, and memories.
+**FromMySilence** is a minimalist web app inspired by [The Unsent Project](https://theunsentproject.com/), offering users a space to share anonymous messages directed to specific names or recipients. It acts as a digital wall for unspoken thoughts, feelings, and memories — all stored, displayed, and shared with simplicity in mind.
+
+🟢 **Live Demo:** [thomstah.github.io/FromMySilence](https://thomstah.github.io/FromMySilence/)
+
+---
 
 ## 🚀 Tech Stack
 
-- **React** (Frontend)
-- **TypeScript** (Type Safety)
-- **Tailwind CSS** (Styling)
-- **Supabase** (Backend / Database)
+- **React** — frontend framework for building UI
+- **TypeScript** — strong typing for safer and scalable development
+- **Tailwind CSS** — utility-first styling for fast and responsive design
+- **Supabase** — backend-as-a-service for database and API
 
-## 🌟 Features (Planned & In Progress)
+---
 
-- Anonymous message submissions
-- Viewable "message wall" or feed
-- Clean, minimalist design with Tailwind CSS
-- Supabase-powered backend for message storage and retrieval
-- Potential for recipient-based message filtering or search
-- Responsive layout across devices
+## ✨ Features
 
-##
+- ✅ Anonymous message submissions
+- ✅ Real-time message wall
+- ✅ Recipient name tagging
+- ✅ Mobile-responsive and accessible layout
+- ✅ Clean, distraction-free interface
+- ✅ Live deployment via GitHub Pages
+
+---
+
+## 💻 Getting Started
+
+### Prerequisites
+
+- Node.js and npm (or yarn)
+
+### Installation
+
+```bash
+git clone https://github.com/thomstah/FromMySilence.git
+cd FromMySilence
+npm install
+```
