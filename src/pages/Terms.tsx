@@ -1,6 +1,6 @@
 export const Terms = () => {
   return (
-    <div className="my-25 flex flex-col justify-center">
+    <div className="my-25 mb-10 flex flex-col justify-center">
       <h1 className="text-center font-mono text-4xl font-bold">
         Terms of Submission
       </h1>
