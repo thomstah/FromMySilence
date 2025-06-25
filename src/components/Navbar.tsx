@@ -11,7 +11,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link
             to={'//'}
-            className="text-xl font-bold text-[#121212] hover:text-[#ff3333]"
+            className="text-xl font-bold text-[#121212] transition-colors hover:text-[#ff3333]"
           >
             FromMy<span className="text-[#ff3333]">Silence</span>
           </Link>
@@ -39,7 +39,7 @@ export const Navbar = () => {
           </div>
           <Link
             to={'/send'}
-            className="hidden transform rounded-lg bg-[#ff3333] p-3 text-[#f4f3f2] hover:bg-[#f20400] md:flex"
+            className="hidden transform rounded-lg bg-[#ff3333] p-3 text-[#f4f3f2] transition-colors hover:bg-[#f20400] md:flex"
           >
             Send Message
           </Link>

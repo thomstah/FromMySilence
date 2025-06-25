@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <div className="my-25 flex flex-col justify-center">
+    <div className="my-20 flex flex-col items-center justify-center lg:h-[80vh] xl:my-10">
       <h1 className="text-center font-mono text-5xl font-bold">
         About The Website
       </h1>

@@ -36,7 +36,11 @@ export const CreateLetter = () => {
   const [error, setError] = useState<string | null>(null);
   const [recipient, setRecipient] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [background, setBackground] = useState('blue.avif');
+  const [background, setBackground] = useState(() => {
+    const randomIndex = Math.floor(Math.random() * backgrounds.length);
+    return backgrounds[randomIndex];
+  });
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
 
   const navigate = useNavigate();
 
@@ -54,6 +58,10 @@ export const CreateLetter = () => {
     event.preventDefault();
     if (!recipient.trim() || !message.trim()) {
       setError('Recipient and/or message cannot be empty.');
+      return;
+    }
+    if (!agreeToTerms) {
+      setError('You must agree to the Terms of Submission before submitting.');
       return;
     }
     setError(null);
@@ -95,7 +103,7 @@ export const CreateLetter = () => {
               placeholder="Write your message..."
               onChange={(event) => setMessage(event.target.value)}
               maxLength={170}
-              className="max-h-64 w-full resize-none border-none bg-transparent outline-none"
+              className="h-64 w-full resize-none border-none bg-transparent outline-none"
             />
           </div>
         </div>
@@ -114,7 +122,27 @@ export const CreateLetter = () => {
         </div>
       </div>
 
-      <div className="flex w-full justify-center">
+      <div className="flex w-full flex-col justify-center">
+        <div className="mt-4 flex items-center justify-center space-x-2">
+          <input
+            type="checkbox"
+            id="terms"
+            checked={agreeToTerms}
+            onChange={(e) => setAgreeToTerms(e.target.checked)}
+            className="h-4 w-4"
+          />
+          <label htmlFor="terms" className="text-sm text-gray-700">
+            I agree to the{' '}
+            <a
+              href="/terms-of-submission"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#ff3333] hover:text-[#f20400]"
+            >
+              Terms of Submission
+            </a>
+          </label>
+        </div>
         <button
           type="submit"
           className="mx-auto mt-4 w-auto max-w-75 cursor-pointer rounded-lg bg-[#ff3333] p-5 px-25 font-mono text-[#f4f3f2] hover:bg-[#f20400] md:w-full md:max-w-full"
